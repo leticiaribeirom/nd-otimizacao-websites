@@ -456,7 +456,7 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
-requestAnimationFrame(createAndAppendPizzas);
+window.requestAnimationFrame(createAndAppendPizzas);
 
 // This function actually creates and appends all of the pizzas when the page loads
 function createAndAppendPizzas() {
