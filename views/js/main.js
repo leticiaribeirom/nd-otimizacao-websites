@@ -456,10 +456,14 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
-// This for-loop actually creates and appends all of the pizzas when the page loads
-for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
-  pizzasDiv.appendChild(pizzaElementGenerator(i));
+requestAnimationFrame(createAndAppendPizzas);
+
+// This function actually creates and appends all of the pizzas when the page loads
+function createAndAppendPizzas() {
+  for (var i = 2; i < 100; i++) {
+    var pizzasDiv = document.getElementById("randomPizzas");
+    pizzasDiv.appendChild(pizzaElementGenerator(i));
+  }
 }
 
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
@@ -511,6 +515,7 @@ function updatePositions() {
 // doesn't add much to the page, so I am removing it.
 //window.addEventListener('scroll', updatePositions);
 
+// I am commenting this to remove the background pizzas
 // Generates the sliding pizzas when the page loads.
 // document.addEventListener('DOMContentLoaded', function() {
 //   var cols = 8;
