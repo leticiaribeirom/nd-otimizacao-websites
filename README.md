@@ -1,4 +1,4 @@
-## Website Performance Optimization Portfolio Project
+## Website Performance Optimization NanoDegree Project
 
 ### Getting started
 
@@ -43,15 +43,14 @@ I've already configured the Gruntfile.js so all you need to do is
 $> grunt
 ```
 
-### Optimization on index.html
-* [Optimizing Performance](https://developers.google.com/web/fundamentals/performance/ "web performance")
-* [Analyzing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp.html "analyzing crp")
-* [Optimizing the Critical Rendering Path](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/optimizing-critical-rendering-path.html "optimize the crp!")
-* [Avoiding Rendering Blocking CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css.html "render blocking css")
-* [Optimizing JavaScript](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript.html "javascript")
-* [Measuring with Navigation Timing](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/measure-crp.html "nav timing api"). We didn't cover the Navigation Timing API in the first two lessons but it's an incredibly useful tool for automated page profiling. I highly recommend reading.
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/eliminate-downloads.html">The fewer the downloads, the better</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer.html">Reduce the size of text</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization.html">Optimize images</a>
-* <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching.html">HTTP caching</a>
+### Optimizations made on index.html
+* Fixed render blocking css by using media types on html to mark some CSS resources as non-render blocking.
+* Marked JavaScript resources as async because they are parser blocking by default. 
+* Removed inline script to fix browser delays
+* Compressed images
+* Minified files
 
+### Optimizations made on views/js/main.js
+* Remove calls to updatePositions(). This function was causing forced synchronous layouts and it's effect doesn't add much to the page itself.
+* Used requestAnimationFrame() because this method tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
+* Refactored function changePizzaSizes() to reduce time to resize pizzas.
