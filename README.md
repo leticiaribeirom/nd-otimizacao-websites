@@ -1,34 +1,47 @@
 ## Website Performance Optimization portfolio project
 
-Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
-
-To get started, check out the repository and inspect the code.
-
 ### Getting started
 
-#### Part 1: Optimize PageSpeed Insights score for index.html
-
-Some useful tips to help you get started:
+#### Part 1: Running PageSpeed Insights for index.html
 
 1. Check out the repository
-1. To inspect the site on your phone, you can run a local server
+2. To inspect the site on PageSpeed Insights, run a local server
 
   ```bash
   $> cd /path/to/your-project-folder
   $> python -m SimpleHTTPServer 8080
   ```
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
-
+3. Open a browser and visit localhost:8080
+4. Download and install [ngrok](https://ngrok.com/) to the top-level of your project directory to make your local server accessible remotely.
+Ngrok allows you to securely expose local development enviroments to the internet.
+5. You can download ngrok via npm
+  ``` bash
+  npm install ngrok --save-dev
+  ```
+6. To run ngrok  
   ``` bash
   $> cd /path/to/your-project-folder
   $> ./ngrok http 8080
   ```
+7. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! 
+8. Another aproach is to run Grunt PageSpeed
+9. First you need to install grunt and grunt-cli
+``` bash
+npm install -g grunt-cli
+npm install --save-dev grunt
+```
+10. Then, you need to add the Grunt plugins to the project:
 
-1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights! Optional: [More on integrating ngrok, Grunt and PageSpeed.](http://www.jamescryer.com/2014/06/12/grunt-pagespeed-and-ngrok-locally-testing/)
+``` bash 
+npm install grunt-pagespeed --save-dev
+npm install load-grunt-tasks --save-dev
+```
 
-Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
+I've already configured the Gruntfile.js so all you need to do is 
+``` bash
+$> grunt
+```
 
 #### Part 2: Optimize Frames per Second in pizza.html
 
