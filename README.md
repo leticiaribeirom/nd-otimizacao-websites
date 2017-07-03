@@ -49,6 +49,7 @@ $> grunt
 * Removed inline script to fix browser delays
 * Compressed images
 * Minified files
+* Removed unnecessary image files
 
 ### Optimizations made on views/js/main.js
 * Remove calls to updatePositions(). This function was causing forced synchronous layouts and it's effect doesn't add much to the page itself.
