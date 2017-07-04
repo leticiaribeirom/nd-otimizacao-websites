@@ -30,12 +30,15 @@ form {
   position: fixed;
   width: 256px;
   z-index: -1;
+  transform: translateZ(0);
   will-change: transform;
 }
 
 .randomPizzaContainer {
   float: left;
   display: flex;
+  transition: transform 0.3s;
+  will-change: transform;
 }
 
 .randomPizzaContainer:after {
