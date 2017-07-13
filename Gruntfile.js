@@ -49,7 +49,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             // cwd is 'current working directory'
-            cwd: 'img/',
+            cwd: ['img/','views/images/']
             src: ['**/*.jpg'],
             dest: 'img/compressed/',
             ext: '.jpg'
@@ -78,5 +78,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-pagespeed');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   // Register default tasks
-  grunt.registerTask('default', ['imagemin']);
+  grunt.registerTask('default', ['psi-ngrok']);
 }
