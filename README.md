@@ -49,9 +49,16 @@ $> grunt
 * Removed inline script to fix browser delays
 * Compressed images
 * Minified files
-* Removed unnecessary image files
+* Put css inline and added internal style sheet
 
 ### Optimizations made on views/js/main.js
 * Remove calls to updatePositions(). This function was causing forced synchronous layouts and it's effect doesn't add much to the page itself.
 * Used requestAnimationFrame() because this method tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
 * Refactored function changePizzaSizes() to reduce time to resize pizzas.
+* De-nested the following function declarations:
+  - changeSliderLabel
+  - sizeSwitcher
+  - determineDx
+  - changePizzaSizes
+* I changed ```querySelector``` to ```getElementsById()``` and ```querySelectorAll``` to ```getElementsByClassName()```    
+
