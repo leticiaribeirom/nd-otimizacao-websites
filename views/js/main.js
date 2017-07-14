@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var screenWidth = screen.availWidth;
   var screenHeight = screen.availHeight;
   var s = 256;
-  var cols = screenWidth / s;
+  var cols = 8;
   var rows = screenHeight / s;                  // Generate pizza total based on available screen dimensions
   var pizzaTotal = Math.ceil(cols * rows);      // ceil err on the side of good visuals
   var movingPizzas = document.getElementById("movingPizzas1");
